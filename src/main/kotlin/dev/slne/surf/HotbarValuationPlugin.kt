@@ -1,7 +1,7 @@
 package dev.slne.surf
 
 import dev.slne.surf.listener.ValuationItemListener
-import dev.slne.surf.p2.listener.P2Manager
+import dev.slne.surf.p2.P2Manager
 import dev.slne.surf.surfapi.bukkit.api.event.register
 import org.bukkit.plugin.java.JavaPlugin
 

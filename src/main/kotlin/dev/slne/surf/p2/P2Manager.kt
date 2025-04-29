@@ -1,4 +1,4 @@
-package dev.slne.surf.p2.listener
+package dev.slne.surf.p2
 
 import com.google.common.eventbus.Subscribe
 import com.plotsquared.bukkit.util.BukkitUtil
@@ -47,7 +47,7 @@ object P2Manager {
         if (plot.ratings.containsKey(plotPlayer.uuid)) {
             player.sendText {
                 appendPrefix()
-                
+
                 info("Du hast bereits eine Bewertung für diesen Plot abgegeben.")
             }
 

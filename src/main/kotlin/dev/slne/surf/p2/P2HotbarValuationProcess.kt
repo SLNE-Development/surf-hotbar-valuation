@@ -1,4 +1,4 @@
-package dev.slne.surf.p2.listener
+package dev.slne.surf.p2
 
 import com.plotsquared.core.plot.Plot
 import com.plotsquared.core.plot.Rating

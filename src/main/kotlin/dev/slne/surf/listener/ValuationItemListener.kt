@@ -2,8 +2,8 @@ package dev.slne.surf.listener
 
 import dev.slne.surf.HotbarValuationProcess
 import dev.slne.surf.PossibleValuations
-import dev.slne.surf.p2.listener.P2HotbarValuationProcess
-import dev.slne.surf.p2.listener.P2Manager
+import dev.slne.surf.p2.P2HotbarValuationProcess
+import dev.slne.surf.p2.P2Manager
 import dev.slne.surf.selectedValuation
 import dev.slne.surf.surfapi.core.api.messages.adventure.sendText
 import dev.slne.surf.surfapi.core.api.util.mutableObject2ObjectMapOf
