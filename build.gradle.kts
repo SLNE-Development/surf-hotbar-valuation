@@ -17,7 +17,7 @@ dependencies {
 
 surfPaperPluginApi {
     mainClass("dev.slne.surf.HotbarValuationPlugin")
-    authors.add("ammo")
+    authors.add("ammo & red")
 
     generateLibraryLoader(false)
 
