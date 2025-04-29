@@ -26,6 +26,7 @@ surfPaperPluginApi {
     serverDependencies {
         registerRequired("Nexo")
         registerRequired("PlotSquared")
+        registerRequired("PlaceholderAPI")
     }
 
     runServer {
