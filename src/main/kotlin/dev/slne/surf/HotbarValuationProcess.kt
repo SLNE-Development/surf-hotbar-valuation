@@ -201,7 +201,7 @@ abstract class HotbarValuationProcess(
         }
     }
 
-    private fun buildStarComponent(glyphs: Glyphs = Glyphs.STAR_NO_BG) = buildText {
+    fun buildStarComponent(glyphs: Glyphs = Glyphs.STAR_NO_BG) = buildText {
         text(buildStarString(glyphs))
     }
 
