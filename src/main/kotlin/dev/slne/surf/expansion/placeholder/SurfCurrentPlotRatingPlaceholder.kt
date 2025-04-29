@@ -18,7 +18,7 @@ class SurfCurrentPlotRatingPlaceholder(): PapiPlaceholder("rating") {
             PossibleValuations.PLOTSQUARED -> {
                 val user = player as? Player ?: return ""
                 val plot = P2Manager.getStandingPlot(user) ?: return ""
-                val average = plot.averageRating * 2
+                val average = plot.averageRating
 
                 buildStarString(Glyphs.STAR_NO_BG, average)
             }
