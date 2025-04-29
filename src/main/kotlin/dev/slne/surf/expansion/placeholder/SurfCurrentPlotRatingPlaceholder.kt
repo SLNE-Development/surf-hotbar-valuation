@@ -20,7 +20,7 @@ class SurfCurrentPlotRatingPlaceholder(): PapiPlaceholder("rating") {
                 val plot = P2Manager.getStandingPlot(user) ?: return ""
                 val average = plot.averageRating
 
-                buildStarString(Glyphs.STAR_NO_BG, average)
+                buildStarString(Glyphs.STAR_NO_BG, average / 2)
             }
         }
     }
