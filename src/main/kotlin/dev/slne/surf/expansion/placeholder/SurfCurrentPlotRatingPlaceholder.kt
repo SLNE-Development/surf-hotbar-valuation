@@ -6,8 +6,10 @@ import dev.slne.surf.selectedValuation
 import dev.slne.surf.surfapi.bukkit.api.hook.papi.expansion.PapiPlaceholder
 import dev.slne.surf.utils.Glyphs
 import dev.slne.surf.utils.buildStarString
+import dev.slne.surf.utils.roundToHalf
 import org.bukkit.OfflinePlayer
 import org.bukkit.entity.Player
+import kotlin.math.roundToInt
 
 class SurfCurrentPlotRatingPlaceholder(): PapiPlaceholder("rating") {
     override fun parse (
@@ -16,9 +18,14 @@ class SurfCurrentPlotRatingPlaceholder(): PapiPlaceholder("rating") {
     ): String {
         return when(selectedValuation) {
             PossibleValuations.PLOTSQUARED -> {
-                val user = player as? Player ?: return ""
-                val plot = P2Manager.getStandingPlot(user) ?: return ""
-                val average = plot.averageRating
+                val user = player as? Player ?: return "Nicht bewertet."
+                val plot = P2Manager.getStandingPlot(user) ?: return "Nicht bewertet."
+
+                if(plot.ratings.values.isEmpty()) {
+                    return "Nicht bewertet."
+                }
+
+                val average = plot.averageRating.roundToHalf()
 
                 buildStarString(Glyphs.STAR_NO_BG, average / 2)
             }

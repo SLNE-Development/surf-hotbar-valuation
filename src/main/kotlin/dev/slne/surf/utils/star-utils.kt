@@ -1,5 +1,7 @@
 package dev.slne.surf.utils
 
+import kotlin.math.roundToInt
+
 fun buildStarString(glyphs: Glyphs = Glyphs.STAR_NO_BG, value: Double, maxValue: Double = 5.0): String {
     val fullStars = value.toInt()
     val hasHalfStar = value % 1 != 0.0
@@ -39,4 +41,8 @@ private fun appendSeparator(builder: StringBuilder, glyphs: Glyphs) {
     } else {
         builder.append("<shift:-1>")
     }
+}
+
+fun Double.roundToHalf(): Double {
+    return if (this % 1 < 0.5) this.toInt().toDouble() else this.toInt() + 0.5
 }
