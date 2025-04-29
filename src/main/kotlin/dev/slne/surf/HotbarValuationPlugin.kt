@@ -22,8 +22,4 @@ class HotbarValuationPlugin : JavaPlugin() {
 
         ValuationItemListener.register()
     }
-
-    override fun onDisable() {
-
-    }
 }
