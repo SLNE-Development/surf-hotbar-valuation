@@ -46,13 +46,16 @@ private fun appendSeparator(builder: StringBuilder, glyphs: Glyphs) {
 }
 
 fun Double.roundToStars(): Double {
-    println("Rounding $this down to half")
+    println("Rounding $this to one decimal place first")
 
-    val base = floor(this)
-    val decimal = this - base
+    val rounded = BigDecimal(this).setScale(1, RoundingMode.HALF_UP).toDouble()
+    println("Rounded to one decimal place: $rounded")
+
+    val base = floor(rounded)
+    val decimal = rounded - base
 
     val result = if (decimal < 0.5) base else base + 0.5
-    println("Rounded $this to $result")
+    println("Rounded $rounded to $result")
 
     return result
 }
