@@ -3,8 +3,6 @@ package dev.slne.surf.utils
 import java.math.BigDecimal
 import java.math.RoundingMode
 import kotlin.math.floor
-import kotlin.math.round
-import kotlin.math.roundToInt
 
 fun buildStarString(glyphs: Glyphs = Glyphs.STAR_NO_BG, value: Double, maxValue: Double = 5.0): String {
     val fullStars = value.toInt()
@@ -47,14 +45,14 @@ private fun appendSeparator(builder: StringBuilder, glyphs: Glyphs) {
     }
 }
 
-fun Double.roundToHalf(): Double {
-    println("Rounding $this to half")
+fun Double.roundToStars(): Double {
+    println("Rounding $this down to half")
 
-    val rounded = BigDecimal(this).setScale(1, RoundingMode.HALF_UP).toDouble()
-    val base = floor(rounded)
-    val decimal = rounded - base
+    val base = floor(this)
+    val decimal = this - base
 
-    println("Rounded $this to $rounded")
+    val result = if (decimal < 0.5) base else base + 0.5
+    println("Rounded $this to $result")
 
-    return if (decimal < 0.5) base else base + 0.5
+    return result
 }
