@@ -22,7 +22,7 @@ class P2HotbarValuationProcess(
         variableValue(ownerName)
     },
     valuator,
-    minValue = 0.0,
+    minValue = 0.5,
     maxValue = 5.0,
     startValue = plot.ratings[valuator.uniqueId]?.averageRating ?: 0.0,
     valueStepSize = ValueStepSize.HALF,
