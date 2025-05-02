@@ -87,6 +87,10 @@ abstract class HotbarValuationProcess(
 
     @EventHandler
     fun onPlayerItemHeld(event: PlayerItemHeldEvent) {
+        if (event.player != valuator) {
+            return
+        }
+
         val newSlot = event.newSlot
         val oldSlot = event.previousSlot
         var change = newSlot - oldSlot
@@ -111,6 +115,10 @@ abstract class HotbarValuationProcess(
 
     @EventHandler
     fun onPlayerInteract(event: PlayerInteractEvent) {
+        if (event.player != valuator) {
+            return
+        }
+        
         event.isCancelled = true
 
         if (event.action.isLeftClick) {
