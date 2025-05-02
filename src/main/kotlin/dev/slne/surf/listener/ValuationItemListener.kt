@@ -53,6 +53,7 @@ object ValuationItemListener : Listener {
                     valuator = player,
                     onEnd = {
                         valuations.remove(player.uniqueId)
+                        player.inventory.remove(item)
                     }
                 )
             }
