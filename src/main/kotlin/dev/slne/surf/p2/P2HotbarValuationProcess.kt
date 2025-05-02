@@ -23,14 +23,7 @@ class P2HotbarValuationProcess(
     valuator,
     minValue = 0.0,
     maxValue = 5.0,
-    startValue = run {
-        val rating = plot.ratings[valuator.uniqueId]
-        if (rating != null) {
-            rating.getRating("all").toDouble() / 2
-        } else {
-            0.0
-        }
-    },
+    startValue = plot.ratings[valuator.uniqueId]?.averageRating ?: 0.0,
     valueStepSize = ValueStepSize.HALF,
     onEnd = onEnd,
 ) {
