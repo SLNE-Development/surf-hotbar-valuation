@@ -63,5 +63,4 @@ object P2Manager {
 
         player.inventory.removeItem(Items.VALUATION_ITEM)
     }
-
 }
