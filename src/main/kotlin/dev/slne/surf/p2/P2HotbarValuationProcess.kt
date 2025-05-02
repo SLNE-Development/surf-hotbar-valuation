@@ -4,6 +4,7 @@ import com.plotsquared.core.plot.Plot
 import com.plotsquared.core.plot.Rating
 import dev.slne.surf.HotbarValuationProcess
 import dev.slne.surf.surfapi.core.api.messages.adventure.buildText
+import dev.slne.surf.utils.Items
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 
@@ -37,6 +38,8 @@ class P2HotbarValuationProcess(
         }
 
         plot.addRating(valuator.uniqueId, Rating((value * 2).toInt()))
+
+        valuator.inventory.removeItem(Items.VALUATION_ITEM)
     }
 
 
