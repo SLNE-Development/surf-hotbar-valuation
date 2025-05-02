@@ -1,8 +1,10 @@
 package dev.slne.surf
 
+import dev.slne.surf.expansion.SurfHotbarValuationPapiExpansion
 import dev.slne.surf.listener.ValuationItemListener
 import dev.slne.surf.p2.P2Manager
 import dev.slne.surf.surfapi.bukkit.api.event.register
+import dev.slne.surf.surfapi.bukkit.api.hook.papi.papiHook
 import org.bukkit.plugin.java.JavaPlugin
 
 val plugin: HotbarValuationPlugin get() = JavaPlugin.getPlugin(HotbarValuationPlugin::class.java)
@@ -21,5 +23,7 @@ class HotbarValuationPlugin : JavaPlugin() {
         }
 
         ValuationItemListener.register()
+
+        papiHook.register(SurfHotbarValuationPapiExpansion)
     }
 }
