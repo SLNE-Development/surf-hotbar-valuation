@@ -6,10 +6,10 @@ plugins {
 }
 
 group = "dev.slne.surf"
-version = "1.21.1.0.0-SNAPSHOT"
+version = "1.21.8-1.0.0-SNAPSHOT"
 
 dependencies {
-    compileOnly("com.nexomc:nexo:1.1.0")
+    compileOnly("com.nexomc:nexo:1.10.0")
     implementation(platform("com.intellectualsites.bom:bom-newest:1.52"))
     compileOnly("com.intellectualsites.plotsquared:plotsquared-core")
     compileOnly("com.intellectualsites.plotsquared:plotsquared-bukkit") { isTransitive = false }
