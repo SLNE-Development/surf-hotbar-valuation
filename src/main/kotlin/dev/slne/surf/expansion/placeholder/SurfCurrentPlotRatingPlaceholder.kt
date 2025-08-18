@@ -17,11 +17,11 @@ class SurfCurrentPlotRatingPlaceholder(): PapiPlaceholder("rating") {
     ): String {
         return when(selectedValuation) {
             PossibleValuations.PLOTSQUARED -> {
-                val user = player as? Player ?: return "Nicht bewertet."
-                val plot = P2Manager.getStandingPlot(user) ?: return "Nicht bewertet."
+                val user = player as? Player ?: return "/"
+                val plot = P2Manager.getStandingPlot(user) ?: return ""
 
                 if(plot.ratings.values.isEmpty()) {
-                    return "Nicht bewertet."
+                    return "/"
                 }
 
                 val average = plot.averageRating.roundToStars()
